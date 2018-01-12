@@ -1,43 +1,72 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var isEmpty = require('lodash/isEmpty');
 
 router.post('/', function(req, res, next) {
   const request = req.body;
-  return User.findOne({
+  if (
+    isEmpty(request) ||
+    isEmpty(request.nim)
+  ) return res.status(400).json({responseCode: '02', responseMessage: 'Request can\'t be null'});
+  else return User.findOne({
     nim: request.nim,
-  }).exec((err, response) => {
-    if (err) throw err;
-    else return res.status(200).
+  }).exec((err, user) => {
+    if (err) return res.status(400).json({responseCode: '02', responseMessage: err});
+    else if (isEmpty(user)) return res.status(400).json({responseCode: '02', responseMessage: 'user not found'});
+    else User.findOneAndUpdate(
+      {nim: user.nim},
+      {$set: {visitCount: Number(user.visitCount + 1)}},
+      {new: true, setDefaultsOnInsert: true}
+    ).exec((err, response) => {
+      if (err) return res.status(400).json({responseCode: '02', responseMessage: err});
+      else return res.status(200).
       json({
         responseCode: '00',
         responseMessage: 'Success',
         response,
       });
+    });
   });
 });
 
 router.post('/create', function(req, res, next) {
   const request = req.body;
-  const newUser = new User();
-  newUser.nim = request.nim;
-  newUser.email = request.email;
-  newUser.password = request.password;
-  newUser.firstName = request.firstName;
-  newUser.lastName = request.lastName;
-  newUser.dateOfBirth = request.dateOfBirth;
-  newUser.profilePict = request.profilePict;
-  newUser.backgroundPic = request.backgroundPic;
-  newUser.isDelete = request.isDelete;
-  return newUser.save((err, response) => {
-    if (err) throw err;
-    else return res.status(200).
-      json({
-        responseCode: '00',
-        responseMessage: 'Success',
-        response,
-      });
-  });
+  if (
+    isEmpty(request) ||
+    isEmpty(request.nim) ||
+    isEmpty(request.email) ||
+    isEmpty(request.password) ||
+    isEmpty(request.firstName) ||
+    isEmpty(request.lastName) ||
+    isEmpty(request.dateOfBirth) ||
+    isEmpty(request.profilePict) ||
+    isEmpty(request.backgroundPic) ||
+    isEmpty(request.isDelete) ||
+    isEmpty(request.visitCount)
+  ) return res.status(400).json({responseCode: '02', responseMessage: 'Request can\'t be null'});
+  else {
+    const newUser = new User();
+    newUser.nim = request.nim;
+    newUser.email = request.email;
+    newUser.password = request.password;
+    newUser.firstName = request.firstName;
+    newUser.lastName = request.lastName;
+    newUser.dateOfBirth = request.dateOfBirth;
+    newUser.profilePict = request.profilePict;
+    newUser.backgroundPic = request.backgroundPic;
+    newUser.isDelete = request.isDelete;
+    newUser.visitCount = request.visitCount;
+    return newUser.save((err, response) => {
+      if (err) return res.status(400).json({responseCode: '02', responseMessage: err});
+      else return res.status(200).
+        json({
+          responseCode: '00',
+          responseMessage: 'Success',
+          response,
+        });
+    });
+  }
 });
 
 module.exports = router;

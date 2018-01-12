@@ -24,7 +24,8 @@ const userSchema = mongoose.Schema({
   dateOfBirth: {type: String, required: true},
   profilePict: String,
   backgroundPic: String,
-  isDelete: {type: Boolean, default: false}
+  isDelete: {type: Boolean, default: false},
+  visitCount: Number
 }, {
   timestamps: true
 });
