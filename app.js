@@ -11,6 +11,10 @@ var login = require('./routes/login.route');
 
 var app = express();
 
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://planatrip-admin:admin@counter-student-shard-00-00-vjckm.mongodb.net:27017,counter-student-shard-00-01-vjckm.mongodb.net:27017,counter-student-shard-00-02-vjckm.mongodb.net:27017/counter-student?ssl=true&replicaSet=counter-student-shard-0&authSource=admin');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

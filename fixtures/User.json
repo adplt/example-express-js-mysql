@@ -1,0 +1,35 @@
+[
+  {
+    "nim": "1901770874",
+    "email": "atriadplt@gmail.com",
+    "password": "12345678",
+    "firstName": "Atria",
+    "lastName": "Dika Puspita",
+    "dateOfBirth": "",
+    "profilePict": "",
+    "backgroundPic": "",
+    "isDelete": false
+  },
+  {
+    "nim": "1901769355",
+    "email": "finda.anisaputri@gmail.com",
+    "password": "12345678",
+    "firstName": "Finda",
+    "lastName": "Anisa Putri",
+    "dateOfBirth": "",
+    "profilePict": "",
+    "backgroundPic": "",
+    "isDelete": false
+  },
+  {
+    "nim": "1901769323",
+    "email": "nindyhutagaol@gmail.com",
+    "password": "12345678",
+    "firstName": "Nindhia",
+    "lastName": "Hutagaol",
+    "dateOfBirth": "",
+    "profilePict": "",
+    "backgroundPic": "",
+    "isDelete": false
+  }
+]
