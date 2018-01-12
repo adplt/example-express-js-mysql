@@ -5,9 +5,9 @@
     "password": "12345678",
     "firstName": "Atria",
     "lastName": "Dika Puspita",
-    "dateOfBirth": "",
-    "profilePict": "",
-    "backgroundPic": "",
+    "dateOfBirth": "00/00/0000",
+    "profilePict": "https://images.unsplash.com/photo-1511055712900-e55b38f1910e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&h=768&fit=crop&s=cfb390afa1039eb809cffd8568d70b20",
+    "backgroundPic": "https://images.unsplash.com/photo-1470803375016-4d4612890a7d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&h=768&fit=crop&s=701261dbea75e4fe5b2a7dd7df4c3a05",
     "isDelete": false
   },
   {
