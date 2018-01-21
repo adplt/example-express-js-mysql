@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "adplt",
-    "database": "'TestDoangDB'",
-    "host": "127.0.0.1",
+    "username": "adplt",
+    "password": "MaJoTwin0707",
+    "database": "exampledb",
+    "host": "example-db-mysql.cp1gitc6ymv4.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "adplt",
-    "database": "'TestDoangDB'",
-    "host": "127.0.0.1",
+    "username": "adplt",
+    "password": "MaJoTwin0707",
+    "database": "exampledb",
+    "host": "example-db-mysql.cp1gitc6ymv4.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "adplt",
-    "database": "'TestDoangDB'",
-    "host": "127.0.0.1",
+    "username": "adplt",
+    "password": "MaJoTwin0707",
+    "database": "exampledb",
+    "host": "example-db-mysql.cp1gitc6ymv4.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
