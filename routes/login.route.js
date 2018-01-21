@@ -7,7 +7,7 @@ var isEmpty = require('lodash/isEmpty');
 router.post('/', (req, res) => {
   const request = req.body;
   const Op = Sequelize.Op;
-  return User.findAll({
+  return User.findOne({
     attributes: ['username', 'password'],
     where: {
       [Op.and]: [

@@ -1,7 +1,9 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../bin/www';
-// import mongoose from 'mongoose';
+import Sequelize from 'sequelize';
+var env = process.env.NODE_ENV || 'development';
+var config = require(__dirname + '/../config/config.json')[env];
 
 const should = chai.should();
 chai.use(chaiHttp);
@@ -9,7 +11,7 @@ chai.use(chaiHttp);
 describe('Blobs', () => {
 
   before(() => {
-    // mongoose.createConnection('mongodb://localhost:27017/planatrip-database');
+    var sequelize = new Sequelize('exampledb', 'adplt', 'MaJoTwin0707', config);
   });
 
   it('/ should have status 200 (Success)', (done) => {
