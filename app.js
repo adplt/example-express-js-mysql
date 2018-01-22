@@ -11,10 +11,6 @@ var login = require('./routes/login.route');
 
 var app = express();
 
-// var mongoose = require('mongoose');
-
-// mongoose.connect('mongodb://counterstudent-shard-00-00-xpfey.mongodb.net:27017,counterstudent-shard-00-01-xpfey.mongodb.net:27017,counterstudent-shard-00-02-xpfey.mongodb.net:27017/counter-student?ssl=true&replicaSet=CounterStudent-shard-0&authSource=admin');
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
