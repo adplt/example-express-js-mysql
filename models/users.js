@@ -18,6 +18,7 @@ const Users = db.define('Users', {
   },
 }, {
   classMethods: {}, // for custom query
+  freezeTableName: true,
 });
 
 module.exports = Users;
